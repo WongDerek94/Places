@@ -9,19 +9,6 @@ require('dotenv').config();
 //const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
 
 const pool = mariadb.createPool({
-    host: 'localhost', 
-    user:'root', 
-    password: 'password',
-    database: 'Places',
-    multipleStatements: true,
-    connectionLimit: 5
-    /*
-    ,ssl: {
-      ca: serverCert
-    }*/
-});
-
-const pool = mariadb.createPool({
   host: process.env.DB_HOST, 
   user: process.env.DB_USER, 
   password: process.env.DB_PASS,
